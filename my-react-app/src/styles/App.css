@@ -1,0 +1,892 @@
+
+/* ===== Navbar.css ===== */
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background: rgba(11, 18, 32, 0.72);
+  color: var(--app-text);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--app-border);
+  backdrop-filter: blur(10px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  color: var(--app-text);
+  font-size: 1.15rem;
+}
+
+/* Nav Container */
+.container2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Make the UL horizontal */
+.container2 ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem; /* space between links */
+}
+
+/* Remove default list styles */
+.container2 li {
+  list-style: none;
+}
+
+/* Nav Links */
+.container2 a {
+  color: var(--app-text);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Underline animation */
+.container2 a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--app-accent);
+  transition: width 0.3s ease;
+}
+
+.container2 a:hover {
+  color: var(--app-accent);
+}
+
+.container2 a:hover::after {
+  width: 100%;
+}
+
+.container2 a[aria-current="page"] {
+  color: var(--app-accent);
+}
+
+.container2 a[aria-current="page"]::after {
+  width: 100%;
+}
+
+.theme-toggle {
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--app-border);
+  background: var(--app-surface);
+  color: var(--app-text);
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+  white-space: nowrap;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  background: var(--app-surface-2);
+}
+
+.theme-toggle:active {
+  transform: translateY(0px);
+}
+
+.theme-toggle:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.22);
+}
+
+html[data-color-mode="bw"] .theme-toggle:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.12);
+}
+
+/* ======= Footer CSS ======= */
+.Footer{
+  padding: 2.4rem 2rem;
+  background: rgba(11, 18, 32, 0.55);
+  border-top: 1px solid var(--app-border);
+  color: var(--app-text);
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.footer-col {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: 14px;
+  padding: 1.2rem;
+  box-shadow: var(--app-shadow);
+}
+
+.footer-brand {
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 0.2px;
+}
+
+.footer-title {
+  font-weight: 700;
+  margin-bottom: 0.65rem;
+}
+
+.footer-text {
+  color: var(--app-muted);
+  line-height: 1.6;
+  margin-top: 0.75rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: var(--app-text);
+  opacity: 0.9;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  color: var(--app-accent);
+}
+
+/* ===== Home Page ===== */
+.home-page {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background:
+    radial-gradient(900px 450px at 10% 0%, rgba(0, 180, 216, 0.18), transparent 60%),
+    radial-gradient(700px 420px at 90% 10%, rgba(0, 119, 182, 0.14), transparent 55%),
+    var(--app-bg);
+  color: var(--app-text);
+  padding: 1rem 2rem;
+}
+
+.home-hero {
+  width: 100%;
+  padding: 3.2rem 0 1.8rem;
+}
+
+.home-hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1.4rem;
+  align-items: stretch;
+}
+
+.home-hero-content {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: 18px;
+  padding: 2.2rem;
+  box-shadow: var(--app-shadow);
+}
+
+.home-hero-content h1 {
+  font-size: 3rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.home-hero-content p {
+  margin-top: 0.9rem;
+  max-width: 56ch;
+  line-height: 1.7;
+  color: var(--app-muted);
+}
+
+.home-hero-actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.4rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.btn-primary {
+  background: var(--app-accent);
+  color: white;
+}
+
+.btn-secondary {
+  background: var(--app-surface);
+  border-color: var(--app-border);
+  color: var(--app-text);
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary:active,
+.btn-secondary:active {
+  transform: translateY(0px);
+}
+
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.22);
+}
+
+html[data-color-mode="bw"] .btn-primary:focus-visible,
+html[data-color-mode="bw"] .btn-secondary:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.12);
+}
+
+.home-metrics {
+  margin-top: 1.6rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.metric-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--app-border);
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+}
+
+html[data-color-mode="bw"] .metric-card {
+  background: white;
+}
+
+.metric-value {
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.metric-label {
+  margin-top: 0.25rem;
+  color: var(--app-muted);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.home-hero-panel {
+  border-radius: 18px;
+  border: 1px solid var(--app-border);
+  background:
+    linear-gradient(180deg, var(--app-surface), rgba(255, 255, 255, 0.03));
+  box-shadow: var(--app-shadow);
+  padding: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  justify-content: center;
+}
+
+.home-panel-title {
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.2px;
+}
+
+.home-panel-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.home-panel-error {
+  color: var(--app-muted);
+  line-height: 1.6;
+}
+
+.doctor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.doctor-item {
+  border: 1px solid var(--app-border);
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+html[data-color-mode="bw"] .doctor-item {
+  background: white;
+}
+
+.doctor-name {
+  font-weight: 800;
+}
+
+.doctor-meta {
+  margin-top: 0.25rem;
+  color: var(--app-muted);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.home-panel-cta {
+  margin-top: 0.4rem;
+  width: 100%;
+}
+
+.panel-line {
+  height: 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--app-border);
+}
+
+html[data-color-mode="bw"] .panel-line {
+  background: #ededed;
+}
+
+.panel-line:nth-child(2) {
+  width: 70%;
+}
+
+.panel-line:nth-child(3) {
+  width: 85%;
+}
+
+.home-section {
+  width: 100%;
+  padding: 1.8rem 0 3.4rem;
+}
+
+.home-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.feature-card {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: 18px;
+  padding: 1.3rem;
+  box-shadow: var(--app-shadow);
+}
+
+.feature-card h3 {
+  font-size: 1.15rem;
+}
+
+.feature-card p {
+  margin-top: 0.6rem;
+  color: var(--app-muted);
+  line-height: 1.7;
+}
+
+.section1,.section2 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 2rem;
+}
+
+.section1-1 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.section1-1 h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  color: #e0e1dd;
+}
+
+.section1-1 p {
+  font-size: 1.1rem;
+  color: #c5c6c7;
+  line-height: 1.7;
+  max-width: 500px;
+}
+
+/* ===== Button Style ===== */
+.section1-1-btn {
+  display: flex;
+  padding: 0.6rem 1.2rem;
+  width: fit-content;
+  background-color: #00a8e8;        /* primary color */
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.14);
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+/* Hover */
+.section1-1-btn:hover {
+  background-color: #0089bf;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+}
+
+/* Active (mouse down / tap) */
+.section1-1-btn:active {
+  transform: translateY(-1px) scale(0.995);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.16);
+}
+
+/* Focus (keyboard accessibility) */
+.section1-1-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,168,232,0.18), 0 8px 20px rgba(0,0,0,0.14);
+  border-radius: 30px;
+}
+
+/* If it's an <a> element ensure it behaves like a button */
+.section1-1-btn[role="button"] { /* optional */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Small icon spacing (if you add an icon inside) */
+.section1-1-btn .icon {
+  display: inline-block;
+  margin-left: 0.6rem;
+  vertical-align: middle;
+}
+
+.section1-2 {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section1-2 img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* home page section 2 */
+
+.section2-1 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.section2-1 h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  color: #e0e1dd;
+}
+
+.section2-1 p {
+  font-size: 1.1rem;
+  color: #c5c6c7;
+  line-height: 1.7;
+  max-width: 500px;
+}
+
+/* ===== Button Style ===== */
+.section2-1-btn {
+  display: flex;
+  padding: 0.6rem 1.2rem;
+  width: fit-content;
+  background-color: #00a8e8;        /* primary color */
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.14);
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+/* Hover */
+.section2-1-btn:hover {
+  background-color: #0089bf;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+}
+
+/* Active (mouse down / tap) */
+.section2-1-btn:active {
+  transform: translateY(-1px) scale(0.995);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.16);
+}
+
+/* Focus (keyboard accessibility) */
+.section2-1-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,168,232,0.18), 0 8px 20px rgba(0,0,0,0.14);
+  border-radius: 30px;
+}
+
+/* If it's an <a> element ensure it behaves like a button */
+.section2-1-btn[role="button"] { /* optional */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Small icon spacing (if you add an icon inside) */
+.section2-1-btn .icon {
+  display: inline-block;
+  margin-left: 0.6rem;
+  vertical-align: middle;
+}
+
+.section2-2 {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section2-2 img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+/* the about section starts here... */
+.page {
+  width: 100%;
+  min-height: calc(100vh - 72px);
+  padding: 3rem 2rem 4rem;
+  background: var(--app-bg);
+  color: var(--app-text);
+}
+
+.page-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.page-header {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: 18px;
+  padding: 1.8rem 2rem;
+  box-shadow: var(--app-shadow);
+}
+
+.page-header h1 {
+  font-size: 2.2rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.page-header p {
+  margin-top: 0.7rem;
+  color: var(--app-muted);
+  line-height: 1.7;
+}
+
+.cards {
+  margin-top: 1.3rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: 18px;
+  padding: 1.3rem;
+  box-shadow: var(--app-shadow);
+}
+
+.card h3 {
+  font-size: 1.15rem;
+}
+
+.card p {
+  margin-top: 0.6rem;
+  color: var(--app-muted);
+  line-height: 1.7;
+}
+
+.form-card {
+  margin-top: 1.3rem;
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: 18px;
+  padding: 1.6rem;
+  box-shadow: var(--app-shadow);
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.field {
+  margin-top: 0.9rem;
+}
+
+.field label {
+  display: block;
+  font-weight: 700;
+  color: var(--app-muted);
+  margin-bottom: 0.45rem;
+}
+
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--app-border);
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: var(--app-text);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(0, 180, 216, 0.6);
+  box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.16);
+}
+
+html[data-color-mode="bw"] .field input,
+html[data-color-mode="bw"] .field textarea,
+html[data-color-mode="bw"] .field select {
+  background: white;
+}
+
+html[data-color-mode="bw"] .field input:focus,
+html[data-color-mode="bw"] .field textarea:focus,
+html[data-color-mode="bw"] .field select:focus {
+  border-color: #111111;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.12);
+}
+
+.form-card .btn-primary {
+  margin-top: 1.2rem;
+  width: 100%;
+}
+
+.form-hint {
+  margin-top: 0.85rem;
+  color: var(--app-muted);
+  line-height: 1.6;
+}
+
+.appointment-box {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 3rem;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  max-width: 400px;
+  width: 90%;
+}
+
+.appointment h1 {
+  color: #00b4d8;
+  margin-bottom: 1rem;
+}
+
+.appointment p {
+  color: #cfd9e3;
+  margin-bottom: 2rem;
+}
+
+.appointment-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.login-btn {
+  background-color: #0077b6;
+}
+
+.register-btn {
+  background-color: #00b4d8;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .Navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .container2 {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .container2 a {
+    font-size: 1.1rem;
+  }
+
+  .container2 ul {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .theme-toggle {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .home-hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .Navbar {
+    padding: 0.9rem 1rem;
+  }
+
+  .home-hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .page {
+    padding: 2.2rem 1rem 3.2rem;
+  }
+
+  .page-header {
+    padding: 1.4rem 1.3rem;
+  }
+
+  .form-card {
+    padding: 1.3rem;
+  }
+}
+
