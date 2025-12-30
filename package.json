@@ -1,0 +1,15 @@
+{
+  "name": "mediconnect",
+  "private": true,
+  "dependencies": {
+    "react-router-dom": "^7.9.4"
+  },
+  "scripts": {
+    "dev": "npm --prefix my-react-app run dev",
+    "build": "npm --prefix my-react-app run build",
+    "lint": "npm --prefix my-react-app run lint",
+    "backend": "cd backend && ..\\venv\\Scripts\\python.exe manage.py runserver 127.0.0.1:8000",
+    "backend:migrate": "cd backend && ..\\venv\\Scripts\\python.exe manage.py migrate",
+    "backend:makemigrations": "cd backend && ..\\venv\\Scripts\\python.exe manage.py makemigrations"
+  }
+}
